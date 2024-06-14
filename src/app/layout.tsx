@@ -3,7 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip"
-import AppWrappers from "./AppWrappers"
+
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -29,11 +29,11 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <AppWrappers>
+      
           <TooltipProvider>
         {children}
         </TooltipProvider>
-        </AppWrappers>
+      
       </body>
      
     </html>

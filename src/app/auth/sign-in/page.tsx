@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import login from "../../../../public/login.svg"
+import login2 from "../../../../public/login2.svg"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -35,15 +35,15 @@ export default function LoginForm() {
               type="email"
               placeholder="my@gmail.com"
               required
-        
+        className="text-black"
             />
           </div>
           <div className="grid gap-2">
             <div className="flex items-center">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password" className="text-black">Password</Label>
               
             </div>
-            <Input id="password" type="password" placeholder="Min 8 characters*" required />
+            <Input id="password" type="password" placeholder="Min 8 characters*" required className="text-black"/>
           </div>
           <Link href="#" className="ml-auto inline-block text-sm underline">
                 Forgot password?
@@ -68,7 +68,7 @@ export default function LoginForm() {
     </Card>
     <div className="hidden bg-muted lg:block">
         <Image
-          src={login}
+          src={login2}
           alt="Image"
           width="1920"
           height="1080"

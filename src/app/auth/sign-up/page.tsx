@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export function LoginForm() {
+export  default function SignupForm() {
   return (
     <Card className="mx-auto max-w-sm">
       <CardHeader>
@@ -54,7 +54,7 @@ export function LoginForm() {
         </div>
         <div className="mt-4 text-center text-sm">
           Already have an account?{" "}
-          <Link href="#" className="underline">
+          <Link href="/auth/sign-in" className="underline">
             Sign in
           </Link>
         </div>

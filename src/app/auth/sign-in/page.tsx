@@ -42,7 +42,7 @@ export default function LoginForm() {
             <Input id="password" type="password" required />
           </div>
           <Link href="/dashboard">
-          <Button type="submit" className="w-full">
+          <Button type="submit" className="w-full bg-gray-800">
             Login
           </Button>
           </Link>

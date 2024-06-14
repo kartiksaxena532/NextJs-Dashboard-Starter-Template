@@ -1,5 +1,5 @@
 import Link from "next/link"
-
+import login from "../../../../public/login.svg"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -10,10 +10,11 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-
+import Image from "next/image";
 export  default function SignupForm() {
   return (
-    <Card className="mx-auto max-w-sm">
+    <div className="flex justify-center align-center h-screen">
+    <Card className="mx-auto my-28 max-w-sm  border-2 border-yellow-400">
       <CardHeader>
         <CardTitle className="text-xl">Sign Up</CardTitle>
         <CardDescription>
@@ -25,11 +26,11 @@ export  default function SignupForm() {
           <div className="grid grid-cols-2 gap-4">
             <div className="grid gap-2">
               <Label htmlFor="first-name">First name</Label>
-              <Input id="first-name" placeholder="Max" required />
+              <Input id="first-name" placeholder="Kartik" required />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="last-name">Last name</Label>
-              <Input id="last-name" placeholder="Robinson" required />
+              <Input id="last-name" placeholder="Saxena" required />
             </div>
           </div>
           <div className="grid gap-2">
@@ -37,7 +38,7 @@ export  default function SignupForm() {
             <Input
               id="email"
               type="email"
-              placeholder="m@example.com"
+              placeholder="meri_mail@example.com"
               required
             />
           </div>
@@ -60,5 +61,15 @@ export  default function SignupForm() {
         </div>
       </CardContent>
     </Card>
+    <div className="hidden bg-muted lg:block">
+        <Image
+          src={login}
+          alt="Image"
+          width="1920"
+          height="1080"
+          className="h-full w-full object-cover opacity-80"
+        />
+      </div>
+      </div>
   )
 }

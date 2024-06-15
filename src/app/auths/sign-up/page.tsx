@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Image from "next/image";
+import google from "../../../../public/google-logo-search-new-svgrepo-com.svg";
 
 import { signIn } from "../../auth"
 
@@ -59,10 +60,11 @@ export  default function SignupForm() {
       "use server"
       await signIn("google")
     }}
-  >
-          <button className="w-full" type="submit">
-            Sign up with Google
-          </button>
+  ><Button variant="outline" className="w-full flex flex-row gap-4 ">
+  <Image src={google} alt="google" className="w-6 h-6"/>
+  Sign Up with Google
+</Button>
+
           </form>
         </div>
         <div className="mt-4 text-center text-sm">

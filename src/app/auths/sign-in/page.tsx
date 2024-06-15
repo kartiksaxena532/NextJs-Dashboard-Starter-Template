@@ -1,4 +1,4 @@
-"use client"
+
 import Link from "next/link"
 import login2 from "../../../../public/login2.svg"
 import { Button } from "@/components/ui/button"
@@ -12,7 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import google from "../../../../public/google-logo-search-new-svgrepo-com.svg";
-
+import { signIn } from "../../auth"
 import Image from "next/image";
 
 export default function LoginForm() {
@@ -53,14 +53,21 @@ export default function LoginForm() {
             Login
           </Button>
           </Link>
-          <Button variant="outline" className="w-full flex flex-row gap-4 ">
+          <form
+    action={async () => {
+      "use server"
+      await signIn("google")
+    }}
+  ><Button variant="outline" className="w-full flex flex-row gap-4 ">
             <Image src={google} alt="google" className="w-6 h-6"/>
             Login with Google
           </Button>
+
+          </form>
         </div>
         <div className="mt-4 text-center text-sm">
           Don&apos;t have an account yet?{" "}
-          <Link href="/auth/sign-up" className="underline">
+          <Link href="/auths/sign-up" className="underline">
             Sign up
           </Link>
         </div>

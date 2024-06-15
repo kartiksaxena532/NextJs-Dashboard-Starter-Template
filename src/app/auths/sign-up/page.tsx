@@ -11,8 +11,12 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Image from "next/image";
+
+import { signIn } from "../../auth"
+
 export  default function SignupForm() {
   return (
+  
     <div className="flex justify-center align-center h-screen">
     <Card className="mx-auto my-28 max-w-sm  border-2 border-yellow-400">
       <CardHeader>
@@ -47,16 +51,23 @@ export  default function SignupForm() {
             <Label htmlFor="password">Password</Label>
             <Input id="password" type="password" className="text-black"/>
           </div>
-          <Button type="submit" className="w-full">
+          <Button  className="w-full">
             Create an account
           </Button>
-          <Button variant="outline" className="w-full">
-            Sign up with GitHub
-          </Button>
+          <form
+    action={async () => {
+      "use server"
+      await signIn("google")
+    }}
+  >
+          <button className="w-full" type="submit">
+            Sign up with Google
+          </button>
+          </form>
         </div>
         <div className="mt-4 text-center text-sm">
           Already have an account?{" "}
-          <Link href="/auth/sign-in" className="underline">
+          <Link href="/auths/sign-in" className="underline">
             Sign in
           </Link>
         </div>
@@ -72,5 +83,6 @@ export  default function SignupForm() {
         />
       </div>
       </div>
+      
   )
 }

@@ -29,11 +29,12 @@ export default function LoginForm() {
         </CardDescription>
       </CardHeader>
       <CardContent>
+        
         <div className="grid gap-4">
           <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
+         <Label htmlFor="email">Email</Label>
             <Input
-              id="email"
+              name="email"
               type="email"
               placeholder="my@gmail.com"
               required
@@ -45,7 +46,7 @@ export default function LoginForm() {
               <Label htmlFor="password" className="text-black">Password</Label>
               
             </div>
-            <Input id="password" type="password" placeholder="Min 8 characters*" required className="text-black"/>
+            <Input name="password" type="password" placeholder="Min 8 characters*" required className="text-black"/>
           </div>
           <Link href="#" className="ml-auto inline-block text-sm underline">
                 Forgot password?
@@ -55,7 +56,6 @@ export default function LoginForm() {
             Login
           </Button>
           </Link>
-
 
           <div className="flex flex-col gap-2">
       {Object.values(providerMap).map((provider) => (
@@ -108,5 +108,8 @@ export default function LoginForm() {
         />
       </div>
     </div>
+    
+    
+
   )
 }

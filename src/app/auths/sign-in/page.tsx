@@ -12,7 +12,7 @@ import {
 import { redirect } from "next/navigation"
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import google from "../../../../public/google-logo-search-new-svgrepo-com.svg";
+
 import { signIn,auth, providerMap  } from "../../auth";
 import { AuthError } from "next-auth"
 import Image from "next/image";

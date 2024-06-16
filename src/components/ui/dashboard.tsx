@@ -76,7 +76,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import google from "../../../../public/google-logo-search-new-svgrepo-com.svg";
+import google from "../../../public/google-logo-search-new-svgrepo-com.svg";
 
 
 export default function Dashboard() {
@@ -284,7 +284,7 @@ export default function Dashboard() {
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <Link href="/auth/sign-in">
+              <Link href="/auths/sign-in">
               <DropdownMenuItem>Logout</DropdownMenuItem>
               </Link>
             </DropdownMenuContent>

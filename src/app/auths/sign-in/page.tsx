@@ -21,7 +21,7 @@ export default function LoginForm() {
   return (
 
     <div className="flex justify-center align-center h-screen">
-    <Card className="mx-auto my-auto border-2 border-yellow-400">
+    <Card className="mx-auto my-auto border-2 border-yellow-400 bg-slate-900">
       <CardHeader>
         <CardTitle className="text-2xl">Login</CardTitle>
         <CardDescription>
@@ -52,7 +52,7 @@ export default function LoginForm() {
                 Forgot password?
               </Link>
           <Link href="/dashboard">
-          <Button type="submit" className="w-full bg-gray-800">
+          <Button type="submit" className="w-full bg-yellow-500 text-black">
             Login
           </Button>
           </Link>

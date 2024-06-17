@@ -19,7 +19,7 @@ export  default function SignupForm() {
   return (
   
     <div className="flex justify-center align-center h-screen">
-    <Card className="mx-auto my-28 max-w-sm  border-2 border-yellow-400">
+    <Card className="mx-auto my-28 max-w-sm  border-2 border-yellow-400  bg-slate-900">
       <CardHeader>
         <CardTitle className="text-xl">Sign Up</CardTitle>
         <CardDescription>
@@ -52,7 +52,7 @@ export  default function SignupForm() {
             <Label htmlFor="password">Password</Label>
             <Input id="password" type="password" className="text-black"/>
           </div>
-          <Button  className="w-full">
+          <Button  className="w-full  bg-yellow-500 text-black">
             Create an account
           </Button>
           <form

@@ -1,4 +1,5 @@
-
+"use client"
+import React from "react"
 import Link from "next/link"
 import login2 from "../../../../public/login2.svg"
 import { Button } from "@/components/ui/button"
@@ -13,10 +14,14 @@ import { redirect } from "next/navigation"
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-import { signIn,auth, providerMap  } from "../../auth";
+import google from "../../../../public/google-logo-search-new-svgrepo-com.svg";
 import { AuthError } from "next-auth"
 import Image from "next/image";
-
+interface LoginParams {
+  authUrlParams: {
+    connection_id: string;
+  };
+}
 export default function LoginForm() {
   return (
 
@@ -52,41 +57,30 @@ export default function LoginForm() {
                 Forgot password?
               </Link>
           <Link href="/dashboard">
-          <Button type="submit" className="w-full bg-yellow-500 text-black">
+          <Button type="submit" className="w-full bg-yellow-500 text-black" onClick={() =>
+      login({
+        authUrlParams: {
+            connection_id: "conn_e5f80aa5258e4685bf629b38003ee954",
+            login_hint: "dave@kinde.com"
+         }
+      })
+    }>
             Login
           </Button>
           </Link>
 
           <div className="flex flex-col gap-2">
-      {Object.values(providerMap).map((provider) => (
-        // eslint-disable-next-line react/jsx-key
-        <form
-          action={async () => {
-            "use server"
-            try {
-              await signIn(provider.id)
-            } catch (error) {
-              // Signin can fail for a number of reasons, such as the user
-              // not existing, or the user not having the correct role.
-              // In some cases, you may want to redirect to a custom error
-              if (error instanceof AuthError) {
-                return redirect(`/auth/sign-in?error=${error.type}`);
-              }
- 
-              // Otherwise if a redirects happens NextJS can handle it
-              // so you can just re-thrown the error and let NextJS handle it.
-              // Docs:
-              // https://nextjs.org/docs/app/api-reference/functions/redirect#server-component
-              throw error
-            }
-          }}
-        >
-        <Button variant="outline" className="w-full flex flex-row gap-4" type="submit">
-            Login with {provider.name}
+        <Button variant="outline" className="w-full flex flex-row gap-4" type="submit"
+       onClick={() =>
+        login({
+          authUrlParams: {
+            connection_id: "conn_0190416530462c181140f05d71c2c9ab",
+          }
+        }) }>
+            <Image src={google} alt="google" className="w-6 h-6"/>
+            Login with Google 
           </Button>
-
-        </form>
-      ))}
+     
     </div>
 
         </div>

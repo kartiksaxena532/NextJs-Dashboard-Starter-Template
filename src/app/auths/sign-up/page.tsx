@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link"
 import login from "../../../../public/login.svg"
 import { Button } from "@/components/ui/button"
@@ -13,13 +14,13 @@ import { Label } from "@/components/ui/label"
 import Image from "next/image";
 import google from "../../../../public/google-logo-search-new-svgrepo-com.svg";
 
-import { signIn } from "../../auth"
+
 
 export  default function SignupForm() {
   return (
   
     <div className="flex justify-center align-center h-screen">
-    <Card className="mx-auto my-28 max-w-sm  border-2 border-yellow-400  bg-slate-900">
+    <Card className="mx-auto my-auto  max-w-sm border-2 border-yellow-400  bg-slate-900">
       <CardHeader>
         <CardTitle className="text-xl">Sign Up</CardTitle>
         <CardDescription>
@@ -55,17 +56,11 @@ export  default function SignupForm() {
           <Button  className="w-full  bg-yellow-500 text-black">
             Create an account
           </Button>
-          <form
-    action={async () => {
-      "use server"
-      await signIn("google")
-    }}
-  ><Button variant="outline" className="w-full flex flex-row gap-4 ">
+        <Button variant="outline" className="w-full flex flex-row gap-4 ">
   <Image src={google} alt="google" className="w-6 h-6"/>
   Sign Up with Google
 </Button>
-
-          </form>
+         
         </div>
         <div className="mt-4 text-center text-sm">
           Already have an account?{" "}
